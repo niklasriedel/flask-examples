@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  flask-example:
+    build:
+      context: .
+    container_name: flask-example
+    image: flask-example:latest
+    hostname: flask-example
+    volumes:
+    - source: ./
+      target: /home/webserver/
+      type: bind

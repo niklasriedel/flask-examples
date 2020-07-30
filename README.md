@@ -8,21 +8,27 @@ Requirements
 
 To install and run these examples you need:
 
-- Python 2.7 or 3.3+
-- virtualenv (not required if you are using Python 3.4)
-- git (only to clone this repository)
+Debian/Ubuntu packages:
+- docker
+- python3-pip
+
+Pip packages:
+- docker-compose
 
 Installation
 ------------
 
 The commands below set everything up to run the examples:
 
-    $ git clone https://github.com/miguelgrinberg/flask-examples.git
     $ cd flask-examples
-    $ virtualenv venv
-    $ . venv/bin/activate
-    (venv) pip install -r requirements.txt
+    $ ./build.sh
+    $ ./run.sh
+    $ ./cleanup.sh
 
-Note for Python 3.4 users: replace `virtualenv` with `pyvenv`.
+To completely remove previous images and build a new image run:
 
-Note for Microsoft Windows users: replace the virtual environment activation command above with `venv\Scripts\activate`.
+    $ cd flask-examples
+    $ ./cleanup.sh --reset
+    $ ./build.sh
+
+Microsoft Windows users: this has been tested in WSL 2 and Ubuntu 20.04. 
