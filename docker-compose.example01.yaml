@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  flask-example:
+    build:
+      context: .
+    container_name: flask-example
+    image: flask-example:latest
+    ports:
+      - "5000:5000"
+    hostname: flask-example
+    volumes:
+    - source: ./01-hello-world
+      target: /home/webserver/
+      type: bind
+    command: python3 hello.py

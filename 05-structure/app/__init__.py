@@ -1,6 +1,7 @@
 import os
 from flask import Flask
-from flask.ext.pymongo import PyMongo
+#from flask.ext.pymongo import PyMongo
+from flask_pymongo import PyMongo
 
 mongo = PyMongo()
 
