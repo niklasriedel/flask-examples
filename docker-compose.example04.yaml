@@ -1,6 +1,8 @@
 version: "3.8"
 services:
   flask-example:
+    depends_on:
+      - mongodb_container
     build:
       context: .
     container_name: flask-example
@@ -13,3 +15,24 @@ services:
       target: /home/webserver/
       type: bind
     command: python3 hello.py
+
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    networks:
+      - default
+      - db_network
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+    command: mongod --auth --bind_ip_all
+
+volumes:
+  mongodb_data_container:
+
+networks:
+  db_network:
+    name: db_network

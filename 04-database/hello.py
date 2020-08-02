@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = "mongodb://mongodb_container"
+app.config['MONGO_URI'] = "mongodb://root:rootpassword@mongodb_container/flask-example?authSource=admin"
 #app.config['MONGO_URI'] = os.environ['MONGO_URI']
 mongo = PyMongo(app)
 

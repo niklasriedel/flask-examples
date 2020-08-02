@@ -2,5 +2,4 @@ import os
 
 DEBUG=False
 TESTING=True
-MONGO_URI="mongodb://mongodb_container"
-#MONGO_URI=os.environ['MONGO_TEST_URI']
+MONGO_URI="mongodb://root:rootpassword@mongodb_container/flask-example?authSource=admin"
