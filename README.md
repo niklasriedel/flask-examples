@@ -1,7 +1,9 @@
 Python Web Development with Flask
 =================================
 
-This repository contains the source code that I demonstrate in my "Python Web Development with Flask" presentation.
+Forked from: https://github.com/miguelgrinberg/flask-examples
+
+This repository contains dockerized examples of Flask (and mongodb partly). This project is intended to be a simple (slightly more modern) example of how to work with Flask and Docker for training purposes.
 
 Requirements
 ------------
@@ -15,20 +17,26 @@ Debian/Ubuntu packages:
 Pip packages:
 - docker-compose
 
-Installation
+Microsoft Windows users: 
+this has been tested in WSL 2 and Ubuntu 20.04. 
+
+Run Examples
 ------------
 
 The commands below set everything up to run the examples:
 
     $ cd flask-examples
-    $ ./build.sh
-    $ ./run.sh
-    $ ./cleanup.sh
+    $ ./run.sh 1
+    $ ./run.sh 2
+    $ ./run.sh 5
+
+Default address to access examples: http://localhost:5000/
+
+Clean Up
+------------
 
 To completely remove previous images and build a new image run:
 
     $ cd flask-examples
     $ ./cleanup.sh --reset
-    $ ./build.sh
 
-Microsoft Windows users: this has been tested in WSL 2 and Ubuntu 20.04. 
