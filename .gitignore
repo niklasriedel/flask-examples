@@ -43,3 +43,6 @@ venv
 
 # Coverage
 cover
+
+# pycharm
+.idea
